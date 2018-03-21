@@ -4,8 +4,8 @@
 
 -- The `apiHost` and `apiEndpoint` can be obtained by doing an authenticated API call
 -- to `https://graph.api.smartthings.com/api/smartapps/endpoints`. See the README for more details.
-apiHost     = "https://graph-na02-useast1.api.smartthings.com"
-apiEndpoint = "/api/smartapps/installations/88888888-cccc-dddd-55555-44444444444"
+apiHost     = "https://graph-na02-useast1.api.smartthings.com:443"
+apiEndpoint = "/api/smartapps/installations/9d217afb-05ca-4933-8c25-ab81dcdce147"
 
 -- Set `blink_led` to true to blink the blue onboard LED upon successful communication with SmartThings
 -- This is useful for visual confirmation and testing, but I leave it off in production
@@ -22,20 +22,31 @@ poll_interval = 60
 -- the ESP8266 board. The pins are labeled with a `D` followed by a number. Only specify the numerical part as the `gpioPin`.
 sensors = {}
 sensors[1] = {
-	name = "Front Door",
-	deviceId = "88888888-cccc-dddd-5555-444444444444",
-	gpioPin = 6
+	name = "Breakfast Window Sensor",
+	deviceId = "20d2ca2a-875f-4859-86cb-c28a39d2fe80",
+	gpioPin = 1
 }
 sensors[2] = {
-	name = "Back Door",
-	deviceId = "88888888-cccc-dddd-5555-ffffffffffff",
-	gpioPin = 7
+	name = "Kitchen Window Sensor",
+	deviceId = "8e01c2f6-8bce-48c5-957a-abd79301f30f",
+	gpioPin = 3
 }
 sensors[3] = {
-	name = "Motion Sensor",
-	deviceId = "88888888-cccc-dddd-5555-eeeeeeeeeeee",
-	gpioPin = 2
+	name = "Powder Room Window Sensor",
+	deviceId = "03db9490-ab50-4d31-9018-5cb6ec5f013b",
+	gpioPin = 5
 }
+sensors[4] = {
+	name = "Egress Window Sensor",
+	deviceId = "47ec86fa-e125-4622-97e8-5b32ef514337",
+	gpioPin = 7
+}
+
+-- sensors[8] = {
+-- 	name = "Breakfast Window Sensor",
+-- 	deviceId = "20d2ca2a-875f-4859-86cb-c28a39d2fe80",
+-- 	gpioPin = 8
+-- }
 
 -- `alarm` is the configuration to connect your alarm system's siren or strobe. SmartThings _Alarm_ capability supports
 -- both siren and strobe states, so you can connect up to two wired devices to two pins on the NodeMCU ESP8266 board,

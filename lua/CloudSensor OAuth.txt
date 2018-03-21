@@ -1,0 +1,58 @@
+Updated SmartApp
+OAuth Client ID: dc3b9d9d-caf6-4d16-a41e-6ac903fd0be0
+OAuth Client Secret: fe9ba585-0c04-4b4c-a397-ade2bb120793
+OAuth Code: JozfAq
+
+Add new devices or sensors get the authorization:
+
+    https://graph.api.smartthings.com/oauth/authorize?response_type=code&client_id=dc3b9d9d-caf6-4d16-a41e-6ac903fd0be0&scope=app&redirect_uri=http://localhost:3000/auth
+
+Get the New Auth Token Parameters:
+API: https://graph.api.smartthings.com/oauth/token
+grant_type=authorization_code
+code=JozfAq
+client_id=dc3b9d9d-caf6-4d16-a41e-6ac903fd0be0
+client_secret=fe9ba585-0c04-4b4c-a397-ade2bb120793
+redirect_uri=http://localhost:3000/auth
+
+{
+    "access_token": "80947ec5-088a-4ce9-9000-a59f16a4da50",
+    "token_type": "bearer",
+    "expires_in": 1576799998,
+    "scope": "app"
+}
+
+[
+    {
+        "oauthClient": {
+            "clientId": "dc3b9d9d-caf6-4d16-a41e-6ac903fd0be0"
+        },
+        "location": {
+            "id": "e4e7fbb3-d4cf-4aa1-a7d0-c4167d3214d7",
+            "name": "Home"
+        },
+        "uri": "https://graph-na02-useast1.api.smartthings.com:443/api/smartapps/installations/9d217afb-05ca-4933-8c25-ab81dcdce147",
+        "base_url": "https://graph-na02-useast1.api.smartthings.com:443",
+        "url": "/api/smartapps/installations/9d217afb-05ca-4933-8c25-ab81dcdce147"
+    }
+]
+
+Update Firmware
+esptool.py --port=/dev/cu.wchusbserial1410 write_flash --flash_mode dio 0x00000 firmware/nodemcu-1.5.4.1-final-10-modules-2017-03-23-20-42-52-integer.bin
+
+
+Install Wch USB serial driver for CH340/CH341 on Mac OSX
+JUNE 23, 2017
+AMBER
+About the App
+App name: Wch USB serial driver for CH340/CH341
+App description: wch-ch34x-usb-serial-driver (App: CH341SER_MAC/ch34xInstall.pkg)
+App website: http://www.wch.cn/download/CH341SER_MAC_ZIP.html
+Install the App
+Press Command+Space and type Terminal and press enter/return key.
+Run in Terminal app:
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
+and press enter/return key. Wait for the command to finish.
+Run:
+brew cask install wch-ch34x-usb-serial-driver
+Done! You can now use Wch USB serial driver for CH340/CH341.
